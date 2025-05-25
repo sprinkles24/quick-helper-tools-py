@@ -1,18 +1,19 @@
-#DOES THIS WORK?
-#DOES IT???
-termList = ["a", "b", "c"]
+#DOES IT WORK?
+#YES IT DOES AHHHHH
 
 def permutation(): #order is relevant, ex. AB and BA are different
-    permList = []
-    adder = findConcatenatingTerm(termList)
-    for term in termList:
+    userList = inputList() #user's list of terms
+    permList = [] #final list of permutations that's being returned
+    adder = findConcatenatingTerm(userList) # " + "  " & " etc
+    for term in userList:
         tempCombo = term + adder
         count = 0
-        while count < len(termList):
-            tempCombo += termList[count]
+        while count < len(userList):
+            if userList[count] != term:
+                tempCombo += userList[count]
+                permList.append(tempCombo)
+                tempCombo = term + adder
             count += 1
-            permList.append(tempCombo)
-            tempCombo = term + adder
     return permList
 
 def findConcatenatingTerm(listWithStrings): #good enough
@@ -43,15 +44,24 @@ def idiotProof(question, acceptedValuesList):
         userInput = (input("> ")).lower()
     return userInput
 
-def inputList(): #doesn't need idiotProof bc no accepted values
+def inputList(): #doesn't need idiotProof bc no specific accepted values
     userList = []
 
     userInput = input("What's the first item in the list?\n> ")
-    userList.append(userInput)
-    while userInput.lower() != "done":
-        userInput = input("What's the next item in the list?\nType 'done' when the list is complete.\n> ")
-        userList.append(userInput)
 
-    return userList #TEST COMMENT LOL
-print(inputList())
-#this is a change ig lol
+    print("What's the next item in the list?\nType 'done' when the list is complete.")
+    while userInput.lower() != "done":
+        userList.append(userInput)
+        userInput = input("> ")
+
+    return userList
+
+
+print("""Permutation Calculator!\n
+  Type any amount of terms below and view all possible pair combinations.
+  Remember, these are permutations, so order matters! For example, if your terms are 'A' and 'B', 'AB' and 'BA' will be shown as two separate permutations.
+  Let's begin!\n""")
+
+perm = permutation()
+print("\n\n\nHere's your final list! Each pair is separated by a comma.\n")
+print(perm)
