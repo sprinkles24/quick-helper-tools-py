@@ -1,4 +1,5 @@
-#quick tools and stuff
+#DOES THIS WORK?
+#
 termList = ["a", "b", "c"]
 
 def permutation(): #order is relevant, ex. AB and BA are different
