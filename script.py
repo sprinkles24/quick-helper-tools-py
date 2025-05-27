@@ -1,6 +1,3 @@
-#DOES IT WORK?
-#YES IT DOES AHHHHH
-
 def permutation(): #order is relevant, ex. AB and BA are different
     userList = inputList() #user's list of terms
     permList = [] #final list of permutations that's being returned
@@ -65,3 +62,4 @@ print("""Permutation Calculator!\n
 perm = permutation()
 print("\n\n\nHere's your final list! Each pair is separated by a comma.\n")
 print(perm)
+
