@@ -1,1 +1,4 @@
 This is a permutation calculator! Users can input any amount of terms, and the program will output every possible pair. It detects the use of "&" and "+", and tries to avoid using them to put pairs together if they are also found in the user's terms. This program was coded in python using PyCharm.
+
+Link to access:
+https://adventuregirl.trinket.io/sites/permutations
